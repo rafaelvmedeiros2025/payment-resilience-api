@@ -1,0 +1,48 @@
+{
+  "name": "payment-resilience-api",
+  "version": "1.0.0",
+  "description": "Asynchronous payment processing with fenced leases, provider idempotency, HTTP timeouts and reconciliation.",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "worker:dev": "tsx watch src/run-worker.ts",
+    "build": "tsc",
+    "start": "node dist/src/server.js",
+    "worker": "node dist/src/run-worker.js",
+    "migrate": "node --import tsx scripts/migrate.ts",
+    "test": "node --import tsx --test test/domain.test.ts",
+    "test:integration": "node --import tsx --test test/integration.test.ts",
+    "check": "tsc --noEmit",
+    "provider": "node dist/src/provider-server.js",
+    "provider:dev": "node --import tsx src/provider-server.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafaelvmedeiros2025/payment-resilience-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/rafaelvmedeiros2025/payment-resilience-api/issues"
+  },
+  "homepage": "https://github.com/rafaelvmedeiros2025/payment-resilience-api",
+  "dependencies": {
+    "fastify": "^5.12.5",
+    "pg": "^8.23.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "@types/pg": "^8.23.1",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=24"
+  }
+}
